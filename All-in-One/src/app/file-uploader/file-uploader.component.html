@@ -1,0 +1,27 @@
+<!-- <angular-file-uploader
+      [config]="afuConfig">
+</angular-file-uploader> -->
+
+<div class="container" *ngIf="flag">
+
+      <input (change)="selectFile($event)" type="file"/>
+      <button (click)="uploadFile()">Upload</button>
+
+</div>
+
+<!--------------------------------------------------------->
+
+<!-- Confirmation Message -->
+
+<div class="type" *ngIf="!flag">
+
+      <!-- <h3>Type 1:</h3> -->
+      <h4>Please Wait... Uploading...</h4>
+
+
+      <!-- <h3>Type 2:</h3>
+      <i class="fa fa-refresh fa-spin" style="font-size:24px"></i>
+      <img src="https://icon-library.com/images/spin-icon/spin-icon-2.jpg" style="width:40px;">
+      <img src="https://icon-library.com/images/progress-icon-gif/progress-icon-gif-1.jpg" style="width:300px;height:auto;"> -->
+
+</div>

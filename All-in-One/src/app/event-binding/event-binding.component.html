@@ -1,0 +1,14 @@
+<div>
+    <h2><u> One way data binding using - Event Binding</u></h2>
+
+    <input type="button" value="Click here" (click)="fun()">
+
+    <p> See the change: {{msg}} </p>   <!--   String interpolation -->
+    <p [innerText]="msg"></p>   <!--   property binding --> <br>
+    
+    <!-- Using reference view to component -->
+    <input type="text" #nameRef>
+    <input type="button" value="Click here" (click)="passValue(nameRef)">
+    <!-- nameRef is a text field reference, using the reference we can get the value of the text field in component side -->
+    
+</div>

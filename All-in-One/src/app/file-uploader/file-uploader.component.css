@@ -1,0 +1,13 @@
+button {
+    color: azure;
+    background-color: green;
+}
+.container {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+.type {
+    padding-left: 700px;
+    justify-content: center;
+}
