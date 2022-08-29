@@ -1,0 +1,31 @@
+<div>
+    <!-- Retreive all records -->
+    <input type="button" value="Get Details" (click)="loadEmployeeDetails()">  <!-- Event-Binding -->
+
+    <!-- Adding new data -->
+    <form [formGroup]="employeeRef" (ngSubmit)="storeData()">   <!-- model driven form | Event-Binding -->
+        <label>Id: </label>
+        <input type="number" formControlName="id"><br>
+        <label>Name: </label>
+        <input type="text" formControlName="name"><br>
+        <label>Age: </label>
+        <input type="text" formControlName="age"><br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit" [disabled]="employeeRef.invalid">
+    </form>
+
+    <!-- View in Table format -->
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.age}}</td>
+        </tr>
+    </table>
+    
+</div>
