@@ -1,0 +1,62 @@
+<div>
+    <h2><u> Stracture Ditective - ngIf </u></h2>
+
+    <p>This is first para</p>
+    <p *ngIf="true">This is second para</p>
+    <p *ngIf="false">This is third para</p>
+    <p *ngIf="f1">This is forth para</p>
+    <p *ngIf="f2">This is fifth para</p>
+----------------------------------------------------------------------------------------------------------<br>
+    <input type="button" value="Get here" (click)="changeValue()">  <!-- Event-binding -->
+    <div *ngIf="f3">
+        Welcome to Angular Training        
+    </div><br>
+----------------------------------------------------------------------------------------------------------<br>
+    <input type="button" [value]="b_name" (click)="toggle()">  <!-- Property + Event Binding -->
+    <div *ngIf="flag">
+        Welcome to Java Full Stack Trainng.
+    </div><br><br>
+
+
+
+
+============================================================================================================
+============================================================================================================
+
+
+    <h2><u> Stracture Ditective - ngFor</u></h2>
+
+    <p>All the Employee: {{names}}</p>
+    <p *ngFor="let name of names">{{name}}</p>
+----------------------------------------------------------------------------------------------------------
+    <p>All the Employee: </p>
+    <ul>
+        <li *ngFor="let name of names">{{name}}</li>
+    </ul>
+----------------------------------------------------------------------------------------------------------
+    <p>Employee details: {{emp}}</p>
+    <p>Employee Id: {{emp.id}} Name: {{emp.name}} Age: {{emp.age}}</p>
+
+----------------------------------------------------------------------------------------------------------
+    <br> Dynamic data input:
+    <input type="text" value="id" #id>
+    <input type="text" value="Name" #name>
+    <input type="text" value="age" #age>
+    <input type="button" value="Add here" (click)="passValue(id, name, age)">
+  
+    <p>Employee details: </p>
+
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.age}}</td>
+        </tr>
+    </table>
+    
+</div>

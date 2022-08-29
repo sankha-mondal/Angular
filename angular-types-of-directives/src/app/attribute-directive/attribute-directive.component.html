@@ -1,0 +1,20 @@
+<div>
+
+    <h2>Attribute Directives</h2>
+    
+    <p style="color: red;">This is simple web page apply css effect using inline css</p>
+
+
+    <p [ngStyle]="{'color':'red'}">This is simple web page apply css effect using angular ngStyle</p>
+    <p [ngStyle]="styProperty">This is simple web page apply css effect using angular ngStyle with variable</p>
+
+------------------------------------------------------------------------------------------------------------------------------
+
+    <p class="myClass1">This is simple web page apply css effect using external css</p>
+
+
+    <p [ngClass]=" 'myClass1' ">This is simple web page apply css effect using ngClass angular attribute</p>
+    <p [ngClass]=" {myClass1:true} ">This is simple web page apply css effect using ngClass angular attribute</p>
+    <p [ngClass]=" {myClass1:false, myClass2:true} ">This is simple web page apply css effect using ngClass angular attribute</p>
+
+</div>
