@@ -1,0 +1,28 @@
+<div>
+  <h2><u> Angular - Routing </u></h2> 
+  <a routerLink="aboutus" [skipLocationChange]="true">About Us</a> &nbsp;
+  <a routerLink="contactus" [skipLocationChange]="true">Contact Us</a> &nbsp;
+  <a routerLink="feedback" [skipLocationChange]="true">Feedback</a> &nbsp;
+  <a routerLink="login" [skipLocationChange]="true">Login</a>
+  <hr>
+  <router-outlet></router-outlet>
+</div>
+
+<!-- <router-outlet> it behaves like a place holder for angular which help to load
+      the content of web page based upon the path provided in routing file. -->
+<!-- [skipLocationChange]="true" is used to not change the link on screen. -->
+<!-- routerLink="aboutus" is used to link to aboutus page. -->
+
+<p style="background-color:lightgreen;">Steps:</p> 
+1)  Create the components.<br>
+2)  Add the path & Components inside the app-routing.module.ts file. <br>
+3)  Add <mark>router-outlet</mark> tag inside app.component.html file. <br>
+4)  Add <mark style="background-color:orange;">routerLink</mark> with all the require components. <br>
+5)  Login operation: <br>
+6)  Create <mark>form</mark> inside login.component.html file. <br>
+7)  Add <mark style="background-color:orange;">public router: Router</mark> to check checkUser() conditions. <br>
+8)  Here we are using <mark>model driven form</mark> concept to checkUser(). <br>
+9)  If the conditions are satisfied the comtrol goes to <mark>"home"</mark> page with a welcome msg. <br>
+10) Login credentials will save in <mark style="background-color:orange;">Session storage</mark>.<br>
+11) Otherwise else block will execute and show some msg. <br>
+12) After successfull log-in user can <mark>"logout"</mark> by Logout button <mark style="background-color:orange;">logout()</mark> will call.  

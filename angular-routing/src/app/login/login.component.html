@@ -1,0 +1,14 @@
+<div>
+    <h2><u> Login Page </u></h2>
+
+    <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
+        <label>Email: </label> 
+        <input type="email" formControlName="email"> <br>
+        <label>Password: </label>
+        <input type="password" formControlName="password">  <br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit" [disabled]="loginRef.invalid">
+    </form>
+    <br>
+    <span style="color:red;">{{msg}}</span>
+</div>
