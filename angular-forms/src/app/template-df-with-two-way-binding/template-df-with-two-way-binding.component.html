@@ -1,0 +1,33 @@
+<h2><u>Template-df with 2-Way-Data-Binding</u></h2>
+
+<div>
+    <form (ngSubmit)="send_email()">                                                      
+        {{ email | json }} <br><br>
+
+        <!-- To field-->
+            <label>To </label>
+            <input matInput placeholder="Enter here" name="recipient"
+                        [(ngModel)]="email.recipient" required/> <br>
+
+        <!-- Subject field-->
+            <label>Subject </label>
+            <input matInput placeholder="Enter here" name="subject"
+                        [(ngModel)]="email.subject" required/>  <br>
+
+        <!-- Text area field-->
+            <label>Text area </label>
+            <textarea matInput placeholder="Hey, What are you doing.." rows="6" name="msgBody"
+                        [(ngModel)]="email.msgBody" required></textarea>  <br>
+  
+        <!-- Progress spinner configuration -->
+        <div *ngIf="flag" style="margin:auto;"></div><br>
+
+        <!-- Button field-->
+        <div class="d-flex justify-content-center">
+            <button type="reset">Reset</button>&nbsp;
+            <button type="submit" [disabled]="flag">Send</button>
+            <!-- [disabled]="email_store.invalid"   (click)="send_btn()"  -->
+        </div>
+
+    </form>
+</div>

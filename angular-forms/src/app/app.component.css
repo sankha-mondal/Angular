@@ -1,0 +1,14 @@
+h3 {
+    color: brown;
+    background-color: greenyellow;
+    border: 2px solid red;
+    margin: 0;
+    padding: 0;
+}
+#name {
+    border: 2px dotted violet;
+}
+button {
+    background-color: blue;
+    border-radius: 25px;
+}

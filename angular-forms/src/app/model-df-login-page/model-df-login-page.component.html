@@ -1,0 +1,38 @@
+<div>
+
+    <h2><u> Login page created using - Model driven Form or Reactive Form </u></h2>
+
+    <form [formGroup]="loginRef" (ngSubmit)="checkUser()">
+
+        <label>Email: </label>
+            <input type="email" formControlName="email"/> <br>
+            <div *ngIf=" loginRef.controls['email'].invalid && 
+                         (loginRef.controls['email'].dirty || loginRef.controls['email'].touched) ">
+
+                <span [hidden]="!loginRef.controls['email'].errors?.['required']">User name is required <br></span>
+                <span [hidden]="!loginRef.controls['email'].errors?.['minlength']">User name must be contain 3 characters <br></span>
+                <span [hidden]="!loginRef.controls['email'].errors?.['pattern']">Pattern must be matched <br></span>
+
+            </div>
+
+        <label>Password: </label>
+            <input type="password" formControlName="password"/><br>
+            <div *ngIf="loginRef.controls['password'].invalid && 
+                        (loginRef.controls['password'].dirty || loginRef.controls['password'].touched) ">
+
+                <span [hidden]="!loginRef.controls['password'].errors?.['required']">Password is required <br></span>
+                <span [hidden]="!loginRef.controls['password'].errors?.['minlength']">Password must be contain 4 characters <br></span>
+                <span [hidden]="!loginRef.controls['password'].errors?.['pattern']">Pattern must be matched <br></span>
+
+            </div>
+
+
+
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit" [disabled]="loginRef.invalid">
+
+    </form>
+
+    <span style="color: red;">{{msg}}</span>
+    
+</div>

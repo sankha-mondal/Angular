@@ -1,0 +1,38 @@
+<div>
+
+    <h2><u> Login page created using - Template driven form </u></h2>
+
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
+
+        <label>Email: </label>
+            <input type="email" name="email" ngModel required minlength="3" pattern="[a-z]+[0-9]*@[a-z]+.com"><br>
+            <div *ngIf=" loginRef.controls['email'].invalid && 
+                         (loginRef.controls['email'].dirty || loginRef.controls['email'].touched) ">
+
+                <span [hidden]="!loginRef.controls['email'].errors?.['required']">User name is required <br></span>
+                <span [hidden]="!loginRef.controls['email'].errors?.['minlength']">User name must be contain 3 characters <br></span>
+                <span [hidden]="!loginRef.controls['email'].errors?.['pattern']">Pattern must be matched <br></span>
+
+            </div>
+
+
+        <label>Password: </label>
+            <input type="password" name="password" ngModel required  minlength="4" pattern="[0-9,a-d]*@[a-d,0-9]*"><br>
+            <div *ngIf="loginRef.controls['password'].invalid && 
+                        (loginRef.controls['password'].dirty || loginRef.controls['password'].touched) ">
+
+                <span [hidden]="!loginRef.controls['password'].errors?.['required']">Password is required <br></span>
+                <span [hidden]="!loginRef.controls['password'].errors?.['minlength']">Password must be contain 4 characters <br></span>
+                <span [hidden]="!loginRef.controls['password'].errors?.['pattern']">Pattern must be matched <br></span>
+
+            </div>
+
+
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit" [disabled]="loginRef.invalid">
+        
+    </form>
+    <!-- {{loginRef.valid}} -->
+    <span style="color:red">{{msg}}</span>
+
+</div>
