@@ -1,0 +1,20 @@
+<div>
+    <h2><u> One way data binding using - Property Binding </u> </h2>
+
+    <input type="text" value="Kumar">    <!-- pure html code  --> <br>
+    <input type="text" value="lname">    <!-- the value itself is lname -->  <br>
+    <input type="text" [value]="lname">  <!-- value patil | can editable-->  <br>
+    <div [innerText]="lname"></div>      <!-- permanent value patil -->
+
+    <hr>
+
+    <input type="button" value="Click here">    <!-- pure html code  --> <br>
+    <input type="button" value="Click here" disabled>    <!-- pure html code  --> <br>
+    <input type="button" value="Click here" disabled = "abc">    <!-- String interpolation | string consider --> <br>
+    <input type="button" value="Click here" disabled = "false">    <!-- String interpolation | string consider --> <br>
+    <input type="button" value="Click here" disabled = {{f1}}>    <!-- String interpolation | string consider --> <br>
+    <input type="button" value="Click here" [disabled] = "f2">    <!-- Property binding | data-type consider --> <br>
+
+    <button [disabled]="f3">Login</button>  <!-- Property binding with button tag --> <br><br>
+    
+</div>

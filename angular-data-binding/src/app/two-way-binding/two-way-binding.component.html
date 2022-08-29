@@ -1,0 +1,19 @@
+<div>
+
+    <h2><u> Two way data binding using - ngModel Attributes </u></h2>
+
+    <input type="text" [(ngModel)]="age"> <br>
+    Age is {{age}}
+
+    <br><br>
+
+    <!-- Two-way-binding Vs Property-binding -->
+    <input type="text" name="salary" [value]="salary"> <br>   
+    Salary is {{salary}}
+
+</div>
+
+<!-- ngModel is a pre-defined attribute part of FormsModule. 
+     So we have to import FormsModule in app.module.ts file in 
+     import section to avoid error -->
+
