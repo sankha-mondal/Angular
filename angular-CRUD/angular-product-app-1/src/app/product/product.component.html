@@ -1,0 +1,60 @@
+<div>
+<!-- Search Operation -->
+<label ><b>Search</b></label>&nbsp;
+<label><input type = "text" name="search" [(ngModel)]="searchText" placeholder ="Enter Some Text To Search" /></label> <br><br><br>
+
+<!-- Store Operaytion -->
+    <input type="button" value="Store Product" (click)="storeRec()"/>
+    <div *ngIf="flagS">
+        <form #productRef = "ngForm" (ngSubmit)="storeProductDb(productRef)">
+            <label>PId </label>
+            <input type="number" name="pid" ngModel required placeholder="Use random number"/><br/>
+            <label>PName </label>
+            <input type="text" name="pname" ngModel required/><br/>
+            <label>Price </label>
+            <input type="number" name="price" ngModel required/><br/>
+            <label>URL </label>
+            <input type="url" name="url" ngModel required/><br/>
+            <input type="submit" value="Click to store product" [disabled]="productRef.invalid"/>
+            <input type="reset" value="reset"/>
+        </form>
+    </div>
+<br/>
+
+<!-- Update Operation -->
+<div *ngIf="flagU">
+    <h2>Update Product Price</h2>
+    <form (ngSubmit)="updateProductFromDb()">
+        <label>PId</label>
+        <input type="number" name="pid" [(ngModel)]="pid" readonly/><br/>
+        <label>Price</label>
+        <input type="number" name="pname" [(ngModel)]="price"/><br/>
+        <input type="submit" value="update product"/>
+    </form>
+</div>
+<br/>
+
+<!--Retrive Operation -->
+<!--  <input type="button" value="See Product" (click)="loadAllProduct()">  -->
+<!-- <span style="color:red">{{storeMsg}}</span> -->
+    <table>
+        <tr>
+            <th>PId</th>
+            <th>PName</th>
+            <th>Price</th>
+            <th>URL</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        <tr *ngFor="let product of products | filter:searchText">
+            <td>{{product.pid}}</td>
+            <td>{{product.pname}}</td>
+            <td>{{product.price}}</td>
+            <td><img src={{product.url}} width="100" height="100"/></td>
+            <td><input type="button" value="delete" (click)="deleteRec(product.pid)"/></td>
+            <td><input type="button" value="update" (click)="updateRec(product)"/></td>
+        </tr>
+    </table>
+    
+</div>
+
