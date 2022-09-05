@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    justify-content: center; 
+}
+
+th {
+    border-bottom: 2px solid black;
+}

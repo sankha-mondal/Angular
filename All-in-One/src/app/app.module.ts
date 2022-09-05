@@ -19,6 +19,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { HttpClientModule } from '@angular/common/http';
+import { PaginationComponent } from './pagination/pagination.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -37,10 +39,11 @@ import { HttpClientModule } from '@angular/common/http';
     ModelDfLoginPageComponent,
     PipeSearchComponent,
     FileUploaderComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, Ng2SearchPipeModule, AngularFileUploaderModule,
-    HttpClientModule,
+    HttpClientModule, NgxPaginationModule
   ],
   providers: [LoginService],    //  register the srevice class details.
   bootstrap: [AppComponent]
