@@ -24,7 +24,7 @@ export class FileUploaderComponent implements OnInit {
 
   file: any;
   flag: boolean = true;
-  fileUploadURL = "http://localhost:8080/api/csv/upload";
+  fileUploadURL = "http://localhost:9090/csv/upload";
 
   selectFile(event: any) {
       console.log(event);
